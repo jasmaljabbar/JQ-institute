@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" role="img" aria-label="Placeholder portrait">
+<defs>
+<radialGradient id="g" cx="50%" cy="38%" r="60%"><stop offset="0" stop-color="#FF6B00" stop-opacity=".55"/><stop offset=".55" stop-color="#FF6B00" stop-opacity=".08"/><stop offset="1" stop-color="#FF6B00" stop-opacity="0"/></radialGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1A20"/><stop offset="1" stop-color="#09090B"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2B33"/><stop offset="1" stop-color="#0B0B0E"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+</defs>
+<rect width="600" height="750" fill="url(#bg)"/>
+<rect width="600" height="750" fill="url(#grid)"/>
+<rect width="600" height="750" fill="url(#g)"/>
+<text x="300" y="150" text-anchor="middle" font-family="Outfit, Segoe UI, sans-serif" font-size="210" font-weight="800" fill="#fff" fill-opacity=".05" letter-spacing="-8">AM</text>
+<circle cx="300" cy="300" r="190" fill="none" stroke="#FF6B00" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 10"/>
+
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#C68A62"/>
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#000" fill-opacity=".18"/>
+<path d="M96 750C96 600 170 498 300 488C430 498 504 600 504 750Z" fill="url(#sh)"/>
+<path d="M300 488C430 498 504 600 504 750" fill="none" stroke="#FF6B00" stroke-opacity=".6" stroke-width="3"/>
+<path d="M256 486L300 556L344 486L322 480L300 520L278 480Z" fill="#EDEDF0" fill-opacity=".92"/>
+<path d="M210 500L300 640L250 750H160C150 640 170 560 210 500ZM390 500L300 640L350 750H440C450 640 430 560 390 500Z" fill="#141418"/><circle cx="300" cy="600" r="6" fill="#FF6B00"/>
+<ellipse cx="300" cy="300" rx="94" ry="114" fill="#C68A62"/>
+<ellipse cx="206" cy="312" rx="14" ry="24" fill="#C68A62"/><ellipse cx="394" cy="312" rx="14" ry="24" fill="#C68A62"/>
+<path d="M300 186C352 186 394 232 394 300C394 368 352 414 300 414" fill="none" stroke="#FF6B00" stroke-opacity=".55" stroke-width="4"/>
+<path d="M204 318C194 222 246 172 300 172C356 172 410 214 398 318C392 276 368 240 300 238C240 238 212 272 204 318Z" fill="#1A1410"/>
+</svg>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | JG Institute of AI &amp; HI</title>
+  <meta name="description" content="A glimpse into curiosity, creativity and learning at JG Institute — Rubik's cubes, puzzles, logic games, memory challenges, creativity labs and AI sessions.">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gallery — JG Institute">
+  <meta property="og:description" content="Curiosity, creativity, thinking, playing and learning.">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- Theme: saved choice, else the device setting (main.js handles the switch).
+       Then hide hero content until its entrance animation starts (motion.js); shown anyway after 2s. -->
+  <script>(function (d) { var t; try { t = localStorage.getItem("jg-theme"); } catch (e) {} if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"; d.setAttribute("data-theme", t); if (matchMedia("(prefers-reduced-motion: reduce)").matches) return; d.classList.add("js-intro"); setTimeout(function () { if (!window.JG_MOTION) d.classList.remove("js-intro"); }, 2000); })(document.documentElement);</script>
+</head>
+<body data-page="gallery">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container split">
+        <div>
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html"><i data-icon="home"></i>Home</a><i data-icon="chevron-r"></i><span>Gallery</span></nav>
+          <h1>JG <em>Gallery</em></h1>
+          <p class="page-hero__lead">A glimpse into the world of curiosity, creativity, thinking, playing and learning.</p>
+        </div>
+        <div class="page-hero__visual"><img src="assets/images/gallery-visual.svg" alt="Gallery illustration" width="800" height="600"></div>
+      </div>
+    </section>
+
+    <section class="section section--white" style="padding-top:var(--s-5)">
+      <div class="container">
+        <div class="notice todo" style="margin-bottom:1.6rem"><i data-icon="info"></i><p><strong>Photos coming soon.</strong> These tiles are placeholders. Replace each image in <code>assets/images/</code> with real JG Institute photos (see README).</p></div>
+
+        <div class="filters" data-filter-for="#gallery" role="group" aria-label="Filter gallery">
+          <button class="filter" data-filter="all" aria-pressed="true"><i data-icon="layers"></i>All</button>
+          <button class="filter" data-filter="rubiks" aria-pressed="false"><i data-icon="cube"></i>Rubik's Cubes</button>
+          <button class="filter" data-filter="puzzle" aria-pressed="false"><i data-icon="puzzle"></i>Puzzle Activities</button>
+          <button class="filter" data-filter="logic" aria-pressed="false"><i data-icon="brain"></i>Logic Games</button>
+          <button class="filter" data-filter="memory" aria-pressed="false"><i data-icon="memory"></i>Memory Challenges</button>
+          <button class="filter" data-filter="creativity" aria-pressed="false"><i data-icon="lightbulb"></i>Creativity Labs</button>
+          <button class="filter" data-filter="ai" aria-pressed="false"><i data-icon="code"></i>AI &amp; Technology</button>
+        </div>
+
+        <!-- GALLERY ITEMS: duplicate a <figure> to add photos. data-cat = one or more filter keys separated by spaces. -->
+        <div class="gallery" id="gallery">
+          <figure class="g-item wide" data-cat="rubiks" tabindex="0"><img src="assets/images/gallery-rubiks-1.svg" alt="Rubik's cube solving — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Rubik's Cube Solving</figcaption></figure>
+          <figure class="g-item" data-cat="puzzle" tabindex="0"><img src="assets/images/gallery-puzzle-1.svg" alt="Puzzle activities — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Puzzle Activities</figcaption></figure>
+          <figure class="g-item" data-cat="logic" tabindex="0"><img src="assets/images/gallery-logic-1.svg" alt="Logic building games — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Logic Building Games</figcaption></figure>
+          <figure class="g-item" data-cat="memory" tabindex="0"><img src="assets/images/gallery-memory-1.svg" alt="Memory challenge — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Memory Challenge</figcaption></figure>
+          <figure class="g-item" data-cat="creativity" tabindex="0"><img src="assets/images/gallery-creativity-1.svg" alt="Creativity lab — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Creativity Lab</figcaption></figure>
+          <figure class="g-item wide" data-cat="ai" tabindex="0"><img src="assets/images/gallery-ai-1.svg" alt="AI and technology session — photo coming soon" loading="lazy" width="800" height="600"><figcaption>AI &amp; Technology Session</figcaption></figure>
+          <figure class="g-item" data-cat="rubiks" tabindex="0"><img src="assets/images/gallery-rubiks-2.svg" alt="Cube challenge — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Cube Challenge</figcaption></figure>
+          <figure class="g-item" data-cat="puzzle" tabindex="0"><img src="assets/images/gallery-puzzle-2.svg" alt="Puzzle team activity — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Puzzle Team Activity</figcaption></figure>
+          <figure class="g-item wide" data-cat="logic" tabindex="0"><img src="assets/images/gallery-logic-2.svg" alt="Strategy games — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Strategy Games</figcaption></figure>
+          <figure class="g-item" data-cat="memory" tabindex="0"><img src="assets/images/gallery-memory-2.svg" alt="Focus and recall activity — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Focus &amp; Recall</figcaption></figure>
+          <figure class="g-item" data-cat="creativity" tabindex="0"><img src="assets/images/gallery-creativity-2.svg" alt="Creative building — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Creative Building</figcaption></figure>
+          <figure class="g-item" data-cat="ai" tabindex="0"><img src="assets/images/gallery-ai-2.svg" alt="Kids AI discovery — photo coming soon" loading="lazy" width="800" height="600"><figcaption>Kids AI Discovery</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:var(--s-5)">
+      <div class="container">
+        <div class="cta reveal">
+          <div><h2>Every activity today builds a smarter tomorrow.</h2><p>Want your child to be part of the next session?</p></div>
+          <div class="btn-row"><a class="btn btn--light" href="junior-programs.html">Explore programs <i data-icon="arrow"></i></a><a class="btn btn--outline-light" href="admissions.html#enquiry">Enquire</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <img src="" alt="">
+    <p></p>
+    <button class="lb-btn lb-close" type="button" aria-label="Close"><i data-icon="x"></i></button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous image"><i data-icon="chevron-l"></i></button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next image"><i data-icon="chevron-r"></i></button>
+  </dialog>
+
+  <footer id="site-footer"></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/motion.js" defer></script>
+</body>
+</html>

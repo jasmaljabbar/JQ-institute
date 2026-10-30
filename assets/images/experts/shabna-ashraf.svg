@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" role="img" aria-label="Placeholder portrait">
+<defs>
+<radialGradient id="g" cx="50%" cy="38%" r="60%"><stop offset="0" stop-color="#FF4D94" stop-opacity=".55"/><stop offset=".55" stop-color="#FF4D94" stop-opacity=".08"/><stop offset="1" stop-color="#FF4D94" stop-opacity="0"/></radialGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1A20"/><stop offset="1" stop-color="#09090B"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E1F3C"/><stop offset="1" stop-color="#0B0B0E"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+</defs>
+<rect width="600" height="750" fill="url(#bg)"/>
+<rect width="600" height="750" fill="url(#grid)"/>
+<rect width="600" height="750" fill="url(#g)"/>
+<text x="300" y="150" text-anchor="middle" font-family="Outfit, Segoe UI, sans-serif" font-size="210" font-weight="800" fill="#fff" fill-opacity=".05" letter-spacing="-8">SA</text>
+<circle cx="300" cy="300" r="190" fill="none" stroke="#FF4D94" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 10"/>
+<path d="M184 320C178 196 236 150 300 150C366 150 424 196 416 320L430 520C380 548 220 548 170 520Z" fill="#FF4D94" opacity=".92"/>
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#D6A07A"/>
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#000" fill-opacity=".18"/>
+<path d="M96 750C96 600 170 498 300 488C430 498 504 600 504 750Z" fill="url(#sh)"/>
+<path d="M300 488C430 498 504 600 504 750" fill="none" stroke="#FF4D94" stroke-opacity=".6" stroke-width="3"/>
+<path d="M256 486L300 556L344 486L322 480L300 520L278 480Z" fill="#EDEDF0" fill-opacity=".92"/>
+
+<ellipse cx="300" cy="300" rx="94" ry="114" fill="#D6A07A"/>
+<ellipse cx="206" cy="312" rx="14" ry="24" fill="#D6A07A"/><ellipse cx="394" cy="312" rx="14" ry="24" fill="#D6A07A"/>
+<path d="M300 186C352 186 394 232 394 300C394 368 352 414 300 414" fill="none" stroke="#FF4D94" stroke-opacity=".55" stroke-width="4"/>
+<path d="M200 300C196 214 244 176 300 176C358 176 406 214 400 300C392 252 352 226 300 226C248 226 208 252 200 300Z" fill="#FF4D94"/>
+</svg>

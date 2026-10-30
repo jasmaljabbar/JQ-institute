@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" role="img" aria-label="Placeholder portrait">
+<defs>
+<radialGradient id="g" cx="50%" cy="38%" r="60%"><stop offset="0" stop-color="#22C55E" stop-opacity=".55"/><stop offset=".55" stop-color="#22C55E" stop-opacity=".08"/><stop offset="1" stop-color="#22C55E" stop-opacity="0"/></radialGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1A20"/><stop offset="1" stop-color="#09090B"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E5A43"/><stop offset="1" stop-color="#0B0B0E"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+</defs>
+<rect width="600" height="750" fill="url(#bg)"/>
+<rect width="600" height="750" fill="url(#grid)"/>
+<rect width="600" height="750" fill="url(#g)"/>
+<text x="300" y="150" text-anchor="middle" font-family="Outfit, Segoe UI, sans-serif" font-size="210" font-weight="800" fill="#fff" fill-opacity=".05" letter-spacing="-8">AN</text>
+<circle cx="300" cy="300" r="190" fill="none" stroke="#22C55E" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 10"/>
+
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#C98E66"/>
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#000" fill-opacity=".18"/>
+<path d="M96 750C96 600 170 498 300 488C430 498 504 600 504 750Z" fill="url(#sh)"/>
+<path d="M300 488C430 498 504 600 504 750" fill="none" stroke="#22C55E" stroke-opacity=".6" stroke-width="3"/>
+<path d="M256 486L300 556L344 486L322 480L300 520L278 480Z" fill="#EDEDF0" fill-opacity=".92"/>
+
+<ellipse cx="300" cy="300" rx="94" ry="114" fill="#C98E66"/>
+<ellipse cx="206" cy="312" rx="14" ry="24" fill="#C98E66"/><ellipse cx="394" cy="312" rx="14" ry="24" fill="#C98E66"/>
+<path d="M300 186C352 186 394 232 394 300C394 368 352 414 300 414" fill="none" stroke="#22C55E" stroke-opacity=".55" stroke-width="4"/>
+<circle cx="300" cy="160" r="46" fill="#16100C"/><path d="M204 320C192 222 244 178 300 178C358 178 410 222 396 320C384 262 352 232 300 232C248 232 216 262 204 320Z" fill="#16100C"/>
+</svg>

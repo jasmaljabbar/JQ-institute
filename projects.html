@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Showcase | JG Institute of AI &amp; HI</title>
+  <meta name="description" content="Project showcase for JG Institute's AI Integrated Programs — student websites, AI projects, digital marketing campaigns, HR analytics and Python applications.">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Project Showcase — JG Institute">
+  <meta property="og:description" content="Ideas. Code. Creativity. Impact.">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- Theme: saved choice, else the device setting (main.js handles the switch).
+       Then hide hero content until its entrance animation starts (motion.js); shown anyway after 2s. -->
+  <script>(function (d) { var t; try { t = localStorage.getItem("jg-theme"); } catch (e) {} if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"; d.setAttribute("data-theme", t); if (matchMedia("(prefers-reduced-motion: reduce)").matches) return; d.classList.add("js-intro"); setTimeout(function () { if (!window.JG_MOTION) d.classList.remove("js-intro"); }, 2000); })(document.documentElement);</script>
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero page-hero--dark">
+      <div class="container split">
+        <div>
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html"><i data-icon="home"></i>Home</a><i data-icon="chevron-r"></i><span>Project Showcase</span></nav>
+          <h1>Project <em>Showcase</em></h1>
+          <p class="page-hero__lead">Ideas. Code. Creativity. Impact. A home for the work our AI Integrated learners build — from websites to dashboards.</p>
+        </div>
+        <div class="page-hero__visual"><img src="assets/images/projects-visual.svg" alt="Project showcase illustration" width="800" height="600"></div>
+      </div>
+    </section>
+
+    <section class="section section--white" style="padding-top:var(--s-5)">
+      <div class="container">
+        <div class="head reveal" style="margin-bottom:var(--s-3)">
+          <span class="eyebrow">Explore projects by category</span>
+          <h2>Built by learners, <span class="hl">guided by mentors.</span></h2>
+        </div>
+
+        <div class="filters" data-filter-for="#project-grid" role="group" aria-label="Filter projects">
+          <button class="filter" data-filter="all" aria-pressed="true"><i data-icon="layers"></i>All Projects</button>
+          <button class="filter" data-filter="websites" aria-pressed="false"><i data-icon="globe"></i>Student Websites</button>
+          <button class="filter" data-filter="ai" aria-pressed="false"><i data-icon="bot"></i>AI Projects</button>
+          <button class="filter" data-filter="marketing" aria-pressed="false"><i data-icon="megaphone"></i>Marketing Campaigns</button>
+          <button class="filter" data-filter="hr" aria-pressed="false"><i data-icon="chart"></i>HR Analytics</button>
+          <button class="filter" data-filter="python" aria-pressed="false"><i data-icon="terminal"></i>Python Applications</button>
+        </div>
+
+        <div class="grid grid-3" id="project-grid">
+          <!--
+            ADD A REAL PROJECT: copy this block, set data-cat to one of websites | ai | marketing | hr | python.
+            Only add projects with the student's permission and a working link.
+
+          <article class="program" data-cat="websites" style="--c:var(--blue)">
+            <div class="program__media"><img src="assets/images/projects/project-name.webp" alt="Screenshot of PROJECT NAME" loading="lazy" width="800" height="500"></div>
+            <div class="program__body">
+              <span class="program__tag">Student Website</span>
+              <h3>Project name</h3>
+              <p>One-line description of what it does.</p>
+              <div class="meta"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+              <p style="font-size:.85rem;flex:0">By Student Name · Program name</p>
+              <a class="link-arrow" href="https://example.com" target="_blank" rel="noopener">View project <i data-icon="external"></i></a>
+            </div>
+          </article>
+          -->
+
+          <article class="cat-card" id="websites" data-cat="websites" style="--c:var(--blue)">
+            <img src="assets/images/project-websites.svg" alt="Student websites illustration" loading="lazy" width="800" height="600">
+            <div class="cat-card__body"><span class="program__tag" style="--c:var(--blue)">AI Web Development</span><h3>Student Websites</h3><p>Creative, responsive and impactful websites built with HTML, CSS, JavaScript and AI tools.</p></div>
+          </article>
+          <article class="cat-card" id="ai" data-cat="ai" style="--c:var(--ink)">
+            <img src="assets/images/project-ai.svg" alt="AI projects illustration" loading="lazy" width="800" height="600">
+            <div class="cat-card__body"><span class="program__tag" style="--c:var(--blue)">AI Projects</span><h3>AI Projects</h3><p>Smart solutions for real problems — chat assistants, recognition systems and automation.</p></div>
+          </article>
+          <article class="cat-card" id="marketing" data-cat="marketing" style="--c:var(--orange)">
+            <img src="assets/images/project-marketing.svg" alt="Digital marketing campaigns illustration" loading="lazy" width="800" height="600">
+            <div class="cat-card__body"><span class="program__tag">AI Digital Marketing</span><h3>Digital Marketing Campaigns</h3><p>Strategy, content and conversions — campaign plans, creatives, ads and analytics.</p></div>
+          </article>
+          <article class="cat-card" id="hr" data-cat="hr" style="--c:var(--green)">
+            <img src="assets/images/project-hr.svg" alt="HR analytics projects illustration" loading="lazy" width="800" height="600">
+            <div class="cat-card__body"><span class="program__tag" style="--c:var(--green)">AI HR &amp; People Analytics</span><h3>HR Analytics Projects</h3><p>People data, smarter decisions — dashboards and reports built with Excel and analytics tools.</p></div>
+          </article>
+          <article class="cat-card" id="python" data-cat="python" style="--c:var(--purple)">
+            <img src="assets/images/project-python.svg" alt="Python applications illustration" loading="lazy" width="800" height="600">
+            <div class="cat-card__body"><span class="program__tag" style="--c:var(--purple)">AI Python Development</span><h3>Python Applications</h3><p>Code, build, automate — desktop tools, file organisers, trackers and scripts.</p></div>
+          </article>
+          <div class="empty" data-cat="websites ai marketing hr python" style="display:flex;flex-direction:column;justify-content:center">
+            <span class="icon-box"><i data-icon="rocket"></i></span>
+            <h3>Student projects coming soon</h3>
+            <p>We'll publish real learner projects here, with links, as our batches complete them.</p>
+            <a class="btn btn--sm" href="ai-programs.html" style="align-self:center">Your project could be here <i data-icon="arrow"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="head center reveal">
+          <span class="eyebrow">Why projects matter</span>
+          <h2>Our learners don't just learn — <span class="hl">they build.</span></h2>
+        </div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+          <div class="card reveal center" style="--c:var(--orange)"><span class="icon-box" style="margin:auto"><i data-icon="hand"></i></span><h3>Hands-on learning</h3></div>
+          <div class="card reveal center" style="--c:var(--green);--d:.05s"><span class="icon-box" style="--c:var(--green);margin:auto"><i data-icon="globe"></i></span><h3>Industry relevant skills</h3></div>
+          <div class="card reveal center" style="--c:var(--blue);--d:.1s"><span class="icon-box" style="--c:var(--blue);margin:auto"><i data-icon="users"></i></span><h3>Mentor guidance</h3></div>
+          <div class="card reveal center" style="--c:var(--purple);--d:.15s"><span class="icon-box" style="--c:var(--purple);margin:auto"><i data-icon="layers"></i></span><h3>Real-world projects</h3></div>
+          <div class="card reveal center" style="--c:var(--pink);--d:.2s"><span class="icon-box" style="--c:var(--pink);margin:auto"><i data-icon="briefcase"></i></span><h3>Career-ready portfolio</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta reveal">
+          <div><h2>Build. Showcase. Succeed.</h2><p>Your next project could be here.</p></div>
+          <div class="btn-row"><a class="btn btn--light" href="ai-programs.html">Explore AI programs <i data-icon="arrow"></i></a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/motion.js" defer></script>
+</body>
+</html>

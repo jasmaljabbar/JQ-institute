@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" role="img" aria-label="Placeholder portrait">
+<defs>
+<radialGradient id="g" cx="50%" cy="38%" r="60%"><stop offset="0" stop-color="#FFBB00" stop-opacity=".55"/><stop offset=".55" stop-color="#FFBB00" stop-opacity=".08"/><stop offset="1" stop-color="#FFBB00" stop-opacity="0"/></radialGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1A20"/><stop offset="1" stop-color="#09090B"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A2E52"/><stop offset="1" stop-color="#0B0B0E"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+</defs>
+<rect width="600" height="750" fill="url(#bg)"/>
+<rect width="600" height="750" fill="url(#grid)"/>
+<rect width="600" height="750" fill="url(#g)"/>
+<text x="300" y="150" text-anchor="middle" font-family="Outfit, Segoe UI, sans-serif" font-size="210" font-weight="800" fill="#fff" fill-opacity=".05" letter-spacing="-8">NK</text>
+<circle cx="300" cy="300" r="190" fill="none" stroke="#FFBB00" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 10"/>
+<path d="M194 300C184 200 238 164 300 164C364 164 418 200 406 300L420 500C384 520 344 506 330 480L270 480C256 506 216 520 180 500Z" fill="#120D0A"/>
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#D29B73"/>
+<rect x="262" y="380" width="76" height="110" rx="26" fill="#000" fill-opacity=".18"/>
+<path d="M96 750C96 600 170 498 300 488C430 498 504 600 504 750Z" fill="url(#sh)"/>
+<path d="M300 488C430 498 504 600 504 750" fill="none" stroke="#FFBB00" stroke-opacity=".6" stroke-width="3"/>
+<path d="M256 486L300 556L344 486L322 480L300 520L278 480Z" fill="#EDEDF0" fill-opacity=".92"/>
+
+<ellipse cx="300" cy="300" rx="94" ry="114" fill="#D29B73"/>
+<ellipse cx="206" cy="312" rx="14" ry="24" fill="#D29B73"/><ellipse cx="394" cy="312" rx="14" ry="24" fill="#D29B73"/>
+<path d="M300 186C352 186 394 232 394 300C394 368 352 414 300 414" fill="none" stroke="#FFBB00" stroke-opacity=".55" stroke-width="4"/>
+<path d="M206 320C196 226 246 182 300 182C356 182 408 222 396 320C380 262 340 236 300 236C266 236 236 250 222 282C216 296 210 308 206 320Z" fill="#120D0A"/>
+</svg>
