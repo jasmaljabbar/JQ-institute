@@ -223,7 +223,18 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: none; margin-left: auto; width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--line-2);
   background: var(--surface); color: var(--ink); align-items: center; justify-content: center; cursor: pointer;
 }
-.nav__toggle .ico { width: 22px; height: 22px; }
+/* Hamburger: three bars fold into an X while the menu is open */
+.nav__bars { position: relative; width: 20px; height: 14px; }
+.nav__bars span {
+  position: absolute; left: 0; top: 6px; width: 100%; height: 2px; border-radius: 2px; background: currentColor;
+  transition: transform .4s var(--ease), opacity .25s var(--ease);
+}
+.nav__bars span:nth-child(1) { transform: translateY(-6px); }
+.nav__bars span:nth-child(3) { transform: translateY(6px); }
+.nav__toggle[aria-expanded="true"] .nav__bars span:nth-child(1) { transform: rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .nav__bars span:nth-child(2) { opacity: 0; transform: scaleX(.2); }
+.nav__toggle[aria-expanded="true"] .nav__bars span:nth-child(3) { transform: rotate(-45deg); }
+.nav__scrim { display: none; }
 
 /* Light / dark switch: sun shows in dark mode, moon in light mode */
 .theme-toggle {
@@ -334,6 +345,61 @@ ul { margin: 0; padding: 0; list-style: none; }
 .stars .ico { width: 14px; height: 14px; }
 .stars .ico svg { fill: currentColor; stroke: none; }
 @keyframes chipFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* Hero background video. It is position: fixed (stays put while the page scrolls) and the hero's
+   clip-path shows it only through the hero, like a window. hero-aria.js scrubs it with the pointer. */
+.hero { clip-path: inset(0); touch-action: pan-y pinch-zoom; } /* sideways swipes scrub the video, not the page */
+.hero__media { position: absolute; inset: 0; z-index: -3; pointer-events: none; }
+.hero__video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
+.hero__video.is-away { visibility: hidden; }
+/* Shade behind the copy on the left; the character on the right stays in full colour */
+.hero__media::after {
+  --shade: color-mix(in srgb, var(--bg) 90%, transparent);
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, var(--bg) 0%, transparent 24%),
+    linear-gradient(90deg, var(--shade) 0%, var(--shade) 36%, color-mix(in srgb, var(--bg) 45%, transparent) 52%, transparent 66%);
+}
+/* With the video, the character takes the cube's place, and the grid and glow step aside */
+.hero__media ~ .hero__grid .cube-wrap { display: none; }
+.hero:has(> .hero__media)::before, .hero:has(> .hero__media)::after { display: none; }
+
+/* A.R.I.A greeting band (always dark glass, so its white text works in both themes) */
+.aria {
+  margin-top: clamp(2.5rem, 5vw, 4rem); padding: clamp(1.4rem, 3.5vw, 2.4rem); border-radius: var(--r-lg);
+  background: rgba(8,8,10,.62); border: 1px solid rgba(255,255,255,.12); color: #fff;
+  backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: var(--shadow-lg);
+}
+.aria__intro {
+  font-size: clamp(18px, 4vw, 26px); line-height: 1.3; color: #fff; margin: 0 0 1rem;
+  filter: blur(4px); user-select: none; -webkit-user-select: none; pointer-events: none;
+}
+.aria__intro span { display: block; }
+.aria__type { font-family: var(--font-head); font-size: clamp(1.35rem, 3vw, 2.1rem); font-weight: 500; line-height: 1.25; letter-spacing: -.02em; color: #fff; max-width: 46rem; margin: 0 0 1.6rem; }
+/* Typewriter: the full line sits invisibly underneath so the box never changes height while typing */
+.tw { display: grid; }
+.tw__ghost, .tw__out { grid-area: 1 / 1; }
+.tw__ghost { visibility: hidden; }
+.tw__cursor { display: inline-block; width: .08em; height: 1em; margin-left: .06em; vertical-align: -.12em; background: var(--orange); animation: twBlink 1s steps(1) infinite; }
+@keyframes twBlink { 50% { opacity: 0; } }
+
+.aria__actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.aria.is-armed .aria__actions { opacity: 0; transform: translateY(8px); }
+.aria.is-armed.is-on .aria__actions { opacity: 1; transform: none; transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.aria__pill {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 46px; max-width: 100%; padding: .7rem 1.35rem;
+  border-radius: var(--r-pill); border: 1.5px solid #fff; background: #fff; color: #0A0A0A;
+  font-weight: 500; font-size: clamp(.88rem, 1.2vw, .98rem); line-height: 1.2; cursor: pointer;
+  transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+}
+.aria__pill:hover { background: #0A0A0A; color: #fff; transform: translateY(-2px); }
+.aria__pill:active { transform: none; }
+.aria__pill--outline { background: transparent; color: #fff; }
+.aria__pill--outline:hover { background: #fff; color: #0A0A0A; }
+.aria__pill .ico { width: 16px; height: 16px; }
+.aria__label { overflow-wrap: anywhere; }
+.aria__ico-done, .aria__pill.is-copied .aria__ico-copy { display: none; }
+.aria__pill.is-copied .aria__ico-done { display: inline-block; }
 
 /* Paths under hero (legacy) */
 .paths { margin-top: -3.5rem; position: relative; z-index: 2; }

@@ -43,6 +43,12 @@
   .nav.open .nav__links > :nth-child(8) { transition-delay: .21s; }
   .nav.open .nav__links > :nth-child(n+9) { transition-delay: .24s; }
   body.menu-open { overflow: hidden; }
+  /* Dims the page under the open menu; tapping it closes the menu (main.js) */
+  .nav__scrim {
+    display: block; position: fixed; top: var(--header-h); left: 0; right: 0; height: calc(100dvh - var(--header-h));
+    background: rgba(0,0,0,.5); opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s;
+  }
+  .nav.open .nav__scrim { opacity: 1; visibility: visible; }
 }
 @media (min-width: 1101px) { .nav__links .mobile-cta { display: none; } }
 
@@ -141,6 +147,8 @@
 }
 
 @media (max-width: 900px) {
+  /* Copy runs full width over the video: shade evenly */
+  .hero__media::after { background: linear-gradient(to top, var(--bg) 0%, transparent 24%), color-mix(in srgb, var(--bg) 70%, transparent); }
   #contact-grid { grid-template-columns: 1fr !important; }
   .split > div[style*="text-align:right"] { text-align: left !important; }
 }
@@ -148,4 +156,7 @@
 @media (max-width: 680px) {
   .filters { justify-content: flex-start !important; }
   .marquee { margin-top: 2.5rem; }
+  .aria__actions { gap: .55rem; }
+  .aria__pill { flex: 1 1 auto; padding: .65rem 1.1rem; }
+  .aria__pill--outline { flex-basis: 100%; }
 }

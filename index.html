@@ -37,6 +37,10 @@
   <main id="main">
     <!-- ================= HERO ================= -->
     <section class="hero" aria-labelledby="hero-title">
+      <!-- Background video: never autoplays; moving the mouse (or swiping) left/right scrubs it (hero-aria.js) -->
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" src="assets/video/hero.mp4" poster="assets/images/hero-poster.jpg" muted playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback tabindex="-1"></video>
+      </div>
       <div class="container hero__grid">
         <div>
           <span class="pill"><b>ADMISSIONS OPEN</b> 2026–27 batches · Ambalavayal, Wayanad</span>
@@ -75,6 +79,25 @@
           <!-- DEMO figures -->
           <div class="hero-chip hero-chip--a"><span class="icon-box" style="--c:var(--orange-2)"><i data-icon="star"></i></span><div><strong>4.9 / 5</strong>Parent &amp; student rating</div></div>
           <div class="hero-chip hero-chip--b"><span class="icon-box"><i data-icon="users"></i></span><div><strong>500+</strong>Learners trained</div></div>
+        </div>
+      </div>
+
+      <!-- A.R.I.A greeting: typed line + quick actions (hero-aria.js) -->
+      <div class="container">
+        <div class="aria" role="region" aria-label="Quick actions">
+          <p class="aria__intro"><span>Hey there, meet A.R.I.A,</span><span>JG Institute's Adaptive Response Interface Agent</span></p>
+          <p class="aria__type" data-typewriter>Glad you stopped in. Curious minds tend to find us. Now, what are we building?</p>
+          <div class="aria__actions">
+            <button class="aria__pill" type="button" data-modal="enquiry" data-program="Not sure — need guidance">Find my program</button>
+            <a class="aria__pill" href="careers.html">Explore careers</a>
+            <a class="aria__pill" data-href="wa" data-msg="Hi JG Institute! Just saying hello." href="https://wa.me/918089296340">Send a quick hello</a>
+            <a class="aria__pill" href="about.html">See how we teach</a>
+            <button class="aria__pill aria__pill--outline" type="button" data-copy-email>
+              <span class="aria__label">Reach us: <span data-site="email">aiwayanad@gmail.com</span></span>
+              <i data-icon="copy" class="aria__ico-copy"></i><i data-icon="check" class="aria__ico-done"></i>
+            </button>
+            <span class="sr-only" role="status" aria-live="polite"></span>
+          </div>
         </div>
       </div>
 
@@ -556,6 +579,7 @@
   <script src="assets/js/icons.js"></script>
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-aria.js"></script>
   <script src="assets/js/motion.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.js" integrity="sha384-JiF4eFN9V3I2Fry7TzFM3XKdq0P3abiVxpOeHjGz4cwvas+uNg6pFWVmuD6MKXqG" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 </body>

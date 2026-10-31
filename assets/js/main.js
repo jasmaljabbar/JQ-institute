@@ -50,10 +50,9 @@
       document.body.classList.toggle("menu-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      toggle.innerHTML = `<i data-icon="${open ? "x" : "menu"}"></i>`;
-      window.renderIcons(toggle);
     };
     toggle.addEventListener("click", () => setOpen(!nav.classList.contains("open")));
+    nav.querySelector(".nav__scrim")?.addEventListener("click", () => setOpen(false));
     nav.querySelectorAll(".nav__links a, .nav__links [data-modal]").forEach((a) => a.addEventListener("click", () => setOpen(false)));
     document.addEventListener("keydown", (e) => e.key === "Escape" && setOpen(false));
     window.addEventListener("resize", () => window.innerWidth > 1100 && setOpen(false));

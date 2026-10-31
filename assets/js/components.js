@@ -85,6 +85,7 @@ window.SITE = {
     header.innerHTML = `
       <div class="container nav" id="nav">
         ${brand}
+        <div class="nav__scrim" aria-hidden="true"></div>
         <nav class="nav__links" id="nav-links" aria-label="Main">
           ${NAV.map(navItem).join("")}
           <button class="btn mobile-cta" type="button" data-modal="enquiry">Book Free Demo ${icon("arrow")}</button>
@@ -93,7 +94,7 @@ window.SITE = {
           <i data-icon="sun" class="theme-toggle__sun"></i><i data-icon="moon" class="theme-toggle__moon"></i>
         </button>
         <button class="btn btn--sm nav__cta" type="button" data-modal="enquiry">Book Free Demo ${icon("arrow")}</button>
-        <button class="nav__toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">${icon("menu")}</button>
+        <button class="nav__toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu"><span class="nav__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
       </div>`;
   }
 
