@@ -706,9 +706,11 @@ th { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: 
 tr:last-child td { border-bottom: 0; }
 td.fee { font-weight: 700; color: var(--orange-2); white-space: nowrap; }
 .tabs { display: inline-flex; padding: 4px; border-radius: var(--r-pill); background: var(--surface); border: 1px solid var(--line); margin-bottom: 1.2rem; }
-.tab { border: 0; background: transparent; padding: .55rem 1.2rem; border-radius: var(--r-pill); font-weight: 600; font-size: .88rem; cursor: pointer; min-height: 40px; color: var(--muted); }
+.tab { border: 0; background: transparent; padding: .55rem 1.2rem; border-radius: var(--r-pill); font-weight: 600; font-size: .88rem; cursor: pointer; min-height: 40px; color: var(--muted); transition: background .25s var(--ease), color .25s var(--ease); }
 .tab[aria-selected="true"] { background: var(--orange); color: #fff; }
 .tab-panel[hidden] { display: none; }
+.tab-panel:not([hidden]) { animation: panelIn .35s var(--ease); }
+@keyframes panelIn { from { opacity: 0; transform: translateY(8px); } }
 
 /* FAQ */
 .faq { display: grid; gap: .8rem; }
