@@ -37,9 +37,13 @@
   <main id="main">
     <!-- ================= HERO ================= -->
     <section class="hero" aria-labelledby="hero-title">
-      <!-- Background video: never autoplays; moving the mouse (or swiping) left/right scrubs it (hero-aria.js) -->
+      <!-- Background video: cinematic AI brain loop. Autoplays muted once the hero is visible and
+           pauses off-screen / when the tab is hidden (hero-aria.js). Reduced-motion visitors get the poster frame. -->
       <div class="hero__media" aria-hidden="true">
-        <video class="hero__video" src="assets/video/hero.mp4" poster="assets/images/hero-poster.jpg" muted playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback tabindex="-1"></video>
+        <video class="hero__video" poster="assets/images/hero-brain-poster.jpg" muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback tabindex="-1">
+          <source src="assets/video/hero-brain.webm" type="video/webm">
+          <source src="assets/video/hero-brain.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="container hero__grid">
         <div>

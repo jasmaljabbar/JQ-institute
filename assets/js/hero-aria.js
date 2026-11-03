@@ -1,6 +1,7 @@
 /* =========================================================
-   JG Institute — home hero: background video scrubbing + A.R.I.A greeting (home page only)
-   · Moving the mouse (or swiping) left / right moves the hero video forwards / backwards.
+   JG Institute — home hero: background video autoplay + A.R.I.A greeting (home page only)
+   · The hero video (looping AI-brain animation) autoplays once the hero scrolls into view and
+     pauses when it's off-screen or the tab is backgrounded, to save battery/CPU.
    · [data-typewriter] lines type themselves out when they come into view
      (optional data-speed / data-delay in ms; defaults 38 / 600).
    · The A.R.I.A quick-action pills fade in; [data-copy-email] copies SITE.email.
@@ -14,60 +15,23 @@
     new IntersectionObserver(([e], io) => { if (e.isIntersecting) { io.disconnect(); resolve(); } }, { threshold }).observe(el);
   });
 
-  /* ---------- Hero video scrubbing ---------- */
+  /* ---------- Hero video autoplay ---------- */
   const video = document.querySelector(".hero__video");
   const hero = video && video.closest(".hero");
   if (video && hero) {
-    const SENSITIVITY = 0.8; // a full-width sweep moves through 80% of the clip
-    let ready = false, inView = true, target = 0, lastX = null;
-
-    /* One seek at a time: when it lands ("seeked"), jump straight to wherever the pointer is now.
-       Checking video.seeking (not a flag of our own) also recovers from seeks the browser drops
-       without a "seeked" event, e.g. before a file from a server without range support is fully loaded. */
-    const seek = () => {
-      const s = video.seekable, to = Math.min(target, s.length ? s.end(s.length - 1) : 0);
-      if (!ready || video.seeking || Math.abs(video.currentTime - to) < 0.01) return;
-      video.currentTime = to;
-    };
-    video.addEventListener("seeked", seek);
-    video.addEventListener("canplaythrough", seek);
-
-    /* A server without range support (e.g. `python3 -m http.server`) leaves the file unseekable;
-       reload it from a blob, which always is (usually straight from the HTTP cache) */
-    video.addEventListener("canplaythrough", () => {
-      const s = video.seekable;
-      if (s.length && s.end(s.length - 1) > 0) return;
-      fetch(video.currentSrc).then((r) => r.blob()).then((b) => { video.src = URL.createObjectURL(b); }).catch(() => {});
-    }, { once: true });
-
-    /* Wait for the duration before seeking; the first small seek also paints a frame on iOS */
-    const onMeta = () => {
-      if (ready || !isFinite(video.duration)) return;
-      ready = true; target = 0.01; seek();
-    };
-    if (video.readyState >= 1) onMeta(); else video.addEventListener("loadedmetadata", onMeta);
-
-    const scrub = (x) => {
-      if (lastX === null || !ready || !inView) { lastX = x; return; }
-      const dx = x - lastX;
-      lastX = x;
-      target = Math.min(Math.max(target + (dx / window.innerWidth) * video.duration * SENSITIVITY, 0), video.duration);
-      seek();
-    };
-
-    if (!reduce) {
-      window.addEventListener("mousemove", (e) => scrub(e.clientX), { passive: true });
-      document.documentElement.addEventListener("mouseleave", () => (lastX = null));
-      /* Touch: horizontal swipes on the hero scrub; vertical scrolling is left alone */
-      hero.addEventListener("touchstart", (e) => (lastX = e.touches[0].clientX), { passive: true });
-      hero.addEventListener("touchmove", (e) => scrub(e.touches[0].clientX), { passive: true });
+    if (reduce) {
+      video.removeAttribute("loop"); // reduced motion: hold on the poster frame, never play
+    } else {
+      let inView = false;
+      const play = () => { if (inView && !document.hidden) video.play().catch(() => {}); };
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([e]) => {
+          inView = e.isIntersecting;
+          if (inView) play(); else video.pause();
+        }, { threshold: 0.15 }).observe(hero);
+      } else { inView = true; play(); }
+      document.addEventListener("visibilitychange", () => { if (document.hidden) video.pause(); else play(); });
     }
-
-    /* Hide the fixed video while the hero is off screen */
-    if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => {
-      inView = e.isIntersecting;
-      video.classList.toggle("is-away", !inView);
-    }).observe(hero);
   }
 
   /* ---------- Typewriter ----------

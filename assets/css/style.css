@@ -346,12 +346,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .stars .ico svg { fill: currentColor; stroke: none; }
 @keyframes chipFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-/* Hero background video. It is position: fixed (stays put while the page scrolls) and the hero's
-   clip-path shows it only through the hero, like a window. hero-aria.js scrubs it with the pointer. */
-.hero { clip-path: inset(0); touch-action: pan-y pinch-zoom; } /* sideways swipes scrub the video, not the page */
-.hero__media { position: absolute; inset: 0; z-index: -3; pointer-events: none; }
-.hero__video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
-.hero__video.is-away { visibility: hidden; }
+/* Hero background video: the AI brain loop, contained within the hero section and scrolling with it. */
+.hero__media { position: absolute; inset: 0; z-index: -3; overflow: hidden; pointer-events: none; }
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% 42%; }
 /* Shade behind the copy on the left; the character on the right stays in full colour */
 .hero__media::after {
   --shade: color-mix(in srgb, var(--bg) 90%, transparent);
