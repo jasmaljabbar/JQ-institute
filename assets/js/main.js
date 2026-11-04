@@ -13,18 +13,17 @@
   const onScroll = () => header && header.classList.toggle("is-scrolled", window.scrollY > 8);
   onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* Light / dark theme. <head> already applied the saved choice (or the device setting);
+  /* Light / dark theme. <head> already applied the saved choice (light by default);
      the header button switches and remembers it, with a circular reveal where supported. */
   const root = document.documentElement;
   const themeBtn = document.querySelector(".theme-toggle");
   const themeMeta = document.querySelector('meta[name="theme-color"]');
-  const savedTheme = () => { try { return localStorage.getItem("jg-theme"); } catch (e) { return null; } };
   const applyTheme = (t) => {
     root.setAttribute("data-theme", t);
     if (themeMeta) themeMeta.content = t === "light" ? "#FFFFFF" : "#0A0A0A";
     if (themeBtn) themeBtn.setAttribute("aria-pressed", String(t === "dark"));
   };
-  applyTheme(root.getAttribute("data-theme") || "dark");
+  applyTheme(root.getAttribute("data-theme") || "light");
   if (themeBtn) themeBtn.addEventListener("click", () => {
     const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
     try { localStorage.setItem("jg-theme", next); } catch (e) { /* storage blocked */ }
@@ -35,10 +34,6 @@
       root.animate({ clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
         { duration: 600, easing: "cubic-bezier(.22,.8,.26,1)", pseudoElement: "::view-transition-new(root)" });
     }).catch(() => {});
-  });
-  /* No saved choice yet: follow the device if it switches (e.g. sunset auto dark mode) */
-  matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
-    if (!savedTheme()) applyTheme(e.matches ? "light" : "dark");
   });
 
   /* Mobile menu */

@@ -105,7 +105,7 @@
   .hero__trio { gap: 1rem; font-size: .78rem; flex-wrap: wrap; }
   .brand__sub { font-size: .58rem; }
   .brand img { width: 36px; height: 36px; }
-  .filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: -1rem; padding: 0 1rem .4rem; scrollbar-width: none; }
+  .filters { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none; }
   .filters::-webkit-scrollbar { display: none; }
   .filter { flex: none; }
   .lb-prev { left: 6px; } .lb-next { right: 6px; } .lb-close { right: 6px; top: -56px; }
@@ -154,7 +154,6 @@
 }
 
 @media (max-width: 680px) {
-  .filters { justify-content: flex-start !important; }
   .marquee { margin-top: 2.5rem; }
   .aria__actions { gap: .55rem; }
   .aria__pill { flex: 1 1 auto; padding: .65rem 1.1rem; }

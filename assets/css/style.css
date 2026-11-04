@@ -63,7 +63,7 @@
 }
 
 /* Light theme — <html data-theme="light">. Set in <head> from the visitor's saved choice,
-   otherwise from their device setting; the header button switches it (main.js). */
+   light by default otherwise; the header button switches it (main.js). */
 :root[data-theme="light"] {
   /* Deeper accents so coloured text stays readable on white */
   --orange: #D14600;
@@ -510,6 +510,25 @@ ul { margin: 0; padding: 0; list-style: none; }
 .course__actions { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding-top: 1rem; margin-top: .2rem; border-top: 1px solid var(--line); }
 .course--more { justify-content: center; align-items: flex-start; background: radial-gradient(circle at 100% 0%, rgba(255,107,0,.25), transparent 60%), var(--surface); }
 
+/* Course tiers (home "Choose your learning path": 3 flagship cards vs. secondary list) */
+.course-tiers__more { margin-top: var(--s-5); }
+.course--featured {
+  padding: 2rem 1.8rem; border-width: 1.5px; border-color: color-mix(in srgb, var(--c) 40%, var(--line));
+  box-shadow: 0 22px 46px -30px color-mix(in srgb, var(--c) 55%, transparent);
+}
+.course--featured::before { height: 4px; opacity: 1; }
+.course--featured .icon-box { width: 64px; height: 64px; border-radius: 16px; }
+.course--featured .icon-box .ico { width: 30px; height: 30px; }
+.course--featured h3 { font-size: 1.32rem; }
+.courses--secondary { gap: .9rem; }
+.course--compact { padding: 1.15rem; gap: .5rem; }
+.course--compact::before { opacity: .4; }
+.course--compact .icon-box { width: 38px; height: 38px; border-radius: 10px; }
+.course--compact .icon-box .ico { width: 18px; height: 18px; }
+.course--compact h3 { font-size: 1.02rem; }
+.course--compact p { font-size: .85rem; }
+.course--compact .course__actions { padding-top: .7rem; }
+
 /* Feature list (check) */
 .checks { display: grid; gap: .7rem; }
 .checks li { display: flex; gap: .7rem; align-items: flex-start; }
@@ -657,13 +676,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 .carousel__btn:disabled { opacity: .35; cursor: default; background: var(--surface); border-color: var(--line-2); }
 
 /* Gallery */
-.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
-.filter {
-  display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; padding: .5rem 1.15rem; border-radius: var(--r-pill);
-  border: 1px solid var(--line-2); background: var(--surface); color: var(--text); font-weight: 500; font-size: .92rem; cursor: pointer; transition: all .25s var(--ease);
+.filters {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem; margin: 0 auto 2rem; max-width: 640px;
+  padding: .3rem; border: 1px solid var(--line); border-radius: var(--r-pill); background: var(--surface);
 }
-.filter:hover { border-color: var(--orange); color: var(--orange); }
-.filter[aria-pressed="true"] { background: var(--orange); color: #fff; border-color: var(--orange); box-shadow: var(--glow); }
+.filter {
+  display: inline-flex; align-items: center; gap: .45rem; min-height: 40px; padding: .5rem 1.1rem; border-radius: var(--r-pill);
+  border: 0; background: transparent; color: var(--muted); font-weight: 500; font-size: .9rem; cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease);
+}
+.filter:hover { color: var(--text); background: var(--surface-2); }
+.filter[aria-pressed="true"] { background: var(--surface-2); color: var(--ink); }
 .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; grid-auto-flow: dense; }
 .g-item { position: relative; border-radius: var(--r); overflow: hidden; cursor: zoom-in; border: 1px solid var(--line); padding: 0; margin: 0; background: var(--surface); aspect-ratio: 4/3; transition: opacity .35s, transform .35s var(--ease); }
 .g-item.wide { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
@@ -675,6 +697,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .g-item:hover figcaption, .g-item:focus-visible figcaption, .g-item:hover .g-cap, .g-item:focus-visible .g-cap { transform: none; opacity: 1; }
 .g-item.is-hidden { display: none; }
+.gallery--simple { display: flex; flex-wrap: wrap; justify-content: center; }
+.gallery--simple .g-item { flex: 1 1 220px; max-width: 260px; }
 .lightbox { border: 0; padding: 0; background: transparent; max-width: min(1000px, 94vw); width: 100%; overflow: visible; }
 .lightbox::backdrop { background: rgba(0,0,0,.88); backdrop-filter: blur(6px); }
 .lightbox img { width: 100%; max-height: 78vh; object-fit: contain; border-radius: var(--r); background: var(--surface); }

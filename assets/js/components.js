@@ -90,7 +90,7 @@ window.SITE = {
           ${NAV.map(navItem).join("")}
           <button class="btn mobile-cta" type="button" data-modal="enquiry">Book Free Demo ${icon("arrow")}</button>
         </nav>
-        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="true" title="Switch light / dark mode">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch light / dark mode">
           <i data-icon="sun" class="theme-toggle__sun"></i><i data-icon="moon" class="theme-toggle__moon"></i>
         </button>
         <button class="btn btn--sm nav__cta" type="button" data-modal="enquiry">Book Free Demo ${icon("arrow")}</button>
